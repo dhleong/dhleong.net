@@ -4,6 +4,12 @@
 //
 
 @gradientMiddle: 48%;
+@gradientStart: #fff;
+@gradientEnd: #ededed;
+
+@baseIconColor: #c0c0c0;
+@textColor: #666666;
+@titleColor: #333;
 
 @avatarSize: 120px;
 
@@ -17,6 +23,18 @@
 //
 // Mixins
 // 
+
+.gradient-bg(@start; @middle; @middlePerc; @end) {
+    // Based on: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+42,ededed+100
+    /* cross-platform, 3-part gradient */
+    background: @start; // Old browsers
+    background: -moz-linear-gradient(top, @start 0%, @middle @middlePerc, @end 100%); // FF3.6+ 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(@middlePerc,@end), color-stop(100%,@end)); // Chrome,Safari4+ 
+    background: -webkit-linear-gradient(top, @start 0%,@end @middlePerc,@end 100%); // Chrome10+,Safari5.1+ 
+    background: -o-linear-gradient(top, @start 0%,@end @middlePerc,@end 100%); // Opera 11.10+ 
+    background: -ms-linear-gradient(top, @start 0%,@end @middlePerc,@end 100%); // IE10+
+    background: linear-gradient(to bottom, @start 0%,@end @middlePerc,@end 100%); // W3C
+}
 
 .noselect() {
     cursor: default;
@@ -37,7 +55,7 @@
     i {
         font-size: @iconSize;
         margin: @marginSmall;
-        color: #c0c0c0;
+        color: @baseIconColor;
 
         -webkit-transition: color @colorTransTime;
         transition: color @colorTransTime;
@@ -56,7 +74,7 @@
 // 
 
 body {
-    color: #666666;
+    color: @textColor;
     font-size: 14px;
     font-family: Helvetica, sans-serif;
 
@@ -70,14 +88,8 @@ body {
     right: 0;
     height: 100%;
 
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+42,ededed+100 */
-    background: #ffffff; /* Old browsers */
-    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff @gradientMiddle, #ededed 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(@gradientMiddle,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #ffffff 0%,#ffffff @gradientMiddle,#ededed 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #ffffff 0%,#ffffff @gradientMiddle,#ededed 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #ffffff 0%,#ffffff @gradientMiddle,#ededed 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #ffffff 0%,#ffffff @gradientMiddle,#ededed 100%); /* W3C */
+    .gradient-bg(@gradientStart, @gradientStart, 
+        @gradientMiddle, @gradientEnd);
 }
 
 .inner {
@@ -93,7 +105,7 @@ body {
         width: @avatarSize;
         height: @avatarSize;
         border-radius: (@avatarSize / 2);
-        margin: 8px;
+        margin: @marginSmall;
     }
 
     .email {
@@ -103,7 +115,7 @@ body {
     .name {
         .noselect();
 
-        color: #333;
+        color: @titleColor;
         font-size: 1.4em;
     }
 }
