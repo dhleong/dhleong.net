@@ -1,0 +1,130 @@
+
+//
+// Vars
+//
+
+@gradientMiddle: 48%;
+
+@avatarSize: 120px;
+
+@iconSize: 30px;
+@colorTransTime: 0.3s;
+
+@marginSmall: 8px;
+@marginMedium: 12px;
+@marginLarge: 16px;
+
+//
+// Mixins
+// 
+
+.noselect() {
+    cursor: default;
+    -moz-user-select: none; 
+    -khtml-user-select: none; 
+    -webkit-user-select: none; 
+    -o-user-select: none; 
+}
+
+.section() {
+    margin: @marginMedium auto;
+    text-align: center;
+    width: 300px;
+}
+
+.icon-links() {
+
+    i {
+        font-size: @iconSize;
+        margin: @marginSmall;
+        color: #c0c0c0;
+
+        -webkit-transition: color @colorTransTime;
+        transition: color @colorTransTime;
+    }
+
+    &:after {
+        // clearfix
+        content: ' ';
+        display: block;
+        clear: both;
+    }
+}
+
+//
+// Rules
+// 
+
+body {
+    color: #666666;
+    font-size: 14px;
+    font-family: Helvetica, sans-serif;
+
+}
+
+.outer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+42,ededed+100 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff @gradientMiddle, #ededed 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(@gradientMiddle,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#ffffff @gradientMiddle,#ededed 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#ffffff @gradientMiddle,#ededed 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#ffffff @gradientMiddle,#ededed 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #ffffff 0%,#ffffff @gradientMiddle,#ededed 100%); /* W3C */
+}
+
+.inner {
+    position: relative;
+    top: 50%;
+    transform: translateY(-70%); // so avatar is slightly above center
+}
+
+.my {
+    .section();
+
+    .avatar {
+        width: @avatarSize;
+        height: @avatarSize;
+        border-radius: (@avatarSize / 2);
+        margin: 8px;
+    }
+
+    .email {
+        .noselect();
+    }
+
+    .name {
+        .noselect();
+
+        color: #333;
+        font-size: 1.4em;
+    }
+}
+
+.social {
+    .icon-links();
+    .section();
+}
+
+/*
+ * Social icon-specific
+ */
+
+.github:hover {
+    color: #333;
+}
+
+.linkedin:hover {
+    color: #0077B5;
+}
+
+.facebook:hover {
+    color: #3B5998;
+}

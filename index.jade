@@ -1,0 +1,81 @@
+//-
+//- Config
+//-
+
+- var avatarSize = 120;
+- var gravatar = 'http://www.gravatar.com/avatar/9f3fb6360b80a481d622af846f2b50f8.png?s=' + avatarSize;
+
+- var social = {};
+- social.Facebook = 'https://facebook.com/dhleong';
+- social.Github = 'https://github.com/dhleong';
+- social.LinkedIn = 'https://www.linkedin.com/in/dhleong';
+
+-
+  var myInfo = {
+      '@context': 'http://schema.org',
+      '@type': 'Person',
+      name: 'Daniel Leong',
+      gender: 'Male',
+      jobTitle: 'Android Engineer',
+      sameAs: Object.keys(social).map(function(k) { return social[k]; })
+  };
+
+- var faviconUrl = '/favicon.ico';
+- var fontAwesomeVersion = '4.4.0';
+
+//-
+//- Constants
+//-
+- var fontAwesome = 'https://maxcdn.bootstrapcdn.com/font-awesome/' + fontAwesomeVersion + '/css/font-awesome.min.css';
+
+- var socialStyles = {};
+- socialStyles.Github = 'github';
+- socialStyles.Facebook = 'facebook-square';
+- socialStyles.LinkedIn = 'linkedin-square';
+
+//-
+//- Mixins
+//-
+
+mixin icon(name)
+    i(class!='icon fa fa-#{name}')&attributes(attributes)
+
+mixin socialIcon(key)
+    - var foo = key.toLowerCase()
+    +icon(socialStyles[key], alt=[key])(class!=foo)
+
+mixin favicon(url)
+    link(rel='shortcut icon', href="#{url}?v1")
+
+//-
+//- Actual page
+//-
+
+doctype html
+head
+    title= myInfo.name
+    link(rel='stylesheet', href='css/main.css')
+    link(rel='stylesheet', href=fontAwesome)
+    +favicon(faviconUrl)
+
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    script(type='application/ld+json')!= JSON.stringify(myInfo, null, ' ')
+
+body
+    .outer
+        .inner
+            .my
+                a(href=social.Github)
+                    img.avatar(src=gravatar)
+                .name= myInfo.name
+                .email
+                    | me
+                    +icon('at')
+                    | dhleong&#046;net
+
+            .social
+                each link, key in social
+                    a(href=link, title=key, class=key.toLowerCase())
+                        +socialIcon(key)
+
