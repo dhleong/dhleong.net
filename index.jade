@@ -3,7 +3,8 @@
 //-
 
 - var avatarSize = 120;
-- var gravatar = 'http://www.gravatar.com/avatar/9f3fb6360b80a481d622af846f2b50f8.png?s=' + avatarSize;
+- var avatarRatios = [1, 2, 3];
+- var gravatarHash = '9f3fb6360b80a481d622af846f2b50f8';
 
 - var social = {};
 - social.Facebook = 'https://facebook.com/dhleong';
@@ -48,6 +49,12 @@ mixin socialIcon(key)
 mixin favicon(url)
     link(rel='shortcut icon', href="#{url}?v1")
 
+mixin gravatar(hash, size, ratios)
+    - var url = 'http://www.gravatar.com/avatar/' + hash + '.png?s='
+    - var sizes = ratios.map(ratio => url + (size * ratio) + ' ' + ratio + 'x');
+    - var srcset = sizes.join(", ")
+    img(src=url + size, srcset=srcset)&attributes(attributes)
+
 //-
 //- Actual page
 //-
@@ -68,7 +75,7 @@ body
         .inner
             .my
                 a(href=social.Github)
-                    img.avatar(src=gravatar)
+                    +gravatar(gravatarHash, avatarSize, avatarRatios).avatar
                 .name= myInfo.name
                 .email
                     | me
