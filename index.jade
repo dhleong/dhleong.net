@@ -50,7 +50,7 @@ mixin favicon(url)
     link(rel='shortcut icon', href="#{url}?v1")
 
 mixin gravatar(hash, size, ratios)
-    - var url = 'http://www.gravatar.com/avatar/' + hash + '.png?s='
+    - var url = '//www.gravatar.com/avatar/' + hash + '.png?s='
     - var sizes = ratios.map(ratio => url + (size * ratio) + ' ' + ratio + 'x');
     - var srcset = sizes.join(", ")
     img(src=url + size, srcset=srcset)&attributes(attributes)
