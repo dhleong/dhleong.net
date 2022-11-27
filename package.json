@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build": "npm run build:jade && npm run build:less",
+    "build:jade": "jade index.jade",
+    "build:less": "lessc css/main.less css/main.css"
+  },
+  "dependencies": {
+    "jade": "^1.11.0",
+    "less": "^4.1.3"
+  }
+}
