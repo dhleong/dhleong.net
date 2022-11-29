@@ -1,0 +1,65 @@
+==================================================================
+https://keybase.io/dhleong
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://dhleong.net
+  * I am dhleong (https://keybase.io/dhleong) on keybase.
+  * I have a public key with fingerprint 1B0D 3E7C C455 210E 2D4E  CBED AB55 7BEA BC94 0DE8
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "1b0d3e7cc455210e2d4ecbedab557beabc940de8",
+            "host": "keybase.io",
+            "key_id": "ab557beabc940de8",
+            "uid": "10dfda2e9c88d9b47429ff1541e8df00",
+            "username": "dhleong"
+        },
+        "service": {
+            "hostname": "dhleong.net",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1403622060,
+    "expire_in": 157680000,
+    "prev": "e0e2ce16c715834dbefe9464d5d32518e43366abd2522229d27f905f90cec31d",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v0.1.22
+Comment: https://keybase.io/crypto
+
+yMHlAnicbZFdSBRfGMZn86NcsfygSEytyVS2xeZ7Z/ZCyKIoSOzjxhKWmTlndyfd
+mW1nVt38WyKCmkYk6I22akm0pSQUgREoVnvRhub+Q4tuBLtQIixJIrLyjNRF0AvD
+YZ739zzvnHmfpSVgVktT/Pq3XatFYUtsYjmInY50DTfgkgZCuLMBr4Ybh1tRPTDg
+DyiqgTtxUiIADR2yzLAsRRKQAgyUJQhEiWUdEhQlWWAIAHncjns13XSgGEnUYYmi
+IQ29uBSA1H/wwY0GSQA3ECkoyDwPBIlxMJTgdpMsQ0IeuAnCBHUYUEUfRDTw1kBN
+9eCNdhyJtYqMxIaNyX8DJSo0kNMf0AxN1mpQw2sYfqfpM0J+E6yDkut3hEtSVIBu
+jQy1MKArmoo7SUTKhmJmkgxBcxRFcIQdh/V+JQBdikmwDo4nUJljYC2KhOj3yJDk
+ZAfJ8jQDJOiGAsMxgAU0xZI8ZGia40QJUCyFSgCUwy0QLHpkKNMkQPN1eEHVcCeH
+PlP0oEhd8aiiEQxAvHFyoioRs1ix5KRN5t4wa0r6n23eb9m8lpJ+fLbmbM9nKS95
+sLivPedB1XzF+Iuhh5fo5Sc5WGSR6sjS21tuWKeZzNGystLKuzeZ+EBhdHWmqTc/
+aJssji7Nru08mjmW2nnK5tsdThpsmbvsG3mtlMO9e0YrCzJav+d2RApHCrTO+V7h
+YHZ/qK4vP+HE45Vg0+Hm6XdbK2z3QrJlbsuV//T3UxfTuukFdsj5ociBd3fFx6fK
+z5Qsftnx/8JY27msnz/Chv35vpXYttuTb7e/au6Jpd5xDhzzLR2q//rR4/8Vx97w
+0f1PmZxwW095hhcbvcUP55YeMQbqw4m287G1RzORhJMj1/pfZhudB/Kiw59Sqqev
+tmatA2sSE1w=
+=/wx4
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dhleong
+
+==================================================================
